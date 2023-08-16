@@ -2,6 +2,7 @@ import { useState } from "react";
 import { StyleSheet, View, FlatList, ScrollView } from "react-native";
 import TodoItem from "./components/TodoItem";
 import TodoInput from "./components/TodoInput";
+import { Image } from "react-native";
 
 export default function App() {
   const [todosList, setTodosList] = useState([]);
@@ -17,7 +18,12 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <View>
+        <Image source={require("./assets/favicon.png")} style={styles.images} />
+      </View>
       <TodoInput onTodoAdded={addTodoText} />
+
+      
 
       {/* <FlatList
         style={styles.todoList}
@@ -45,18 +51,28 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
-    paddingHorizontal: 20,
+    // padding: 10,
+    // paddingHorizontal: 20,
   },
 
   todoList: {
+    padding: 10,
     borderColor: "#cccccc",
     borderWidth: 1,
     fontSize: 24,
     marginVertical: 10,
     textAlign: "center",
     borderRadius: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
+    // paddingTop: 10,
+    // paddingBottom: 10,
   },
+  images: {
+    width: 30, 
+    height: 30, 
+    resizeMode: "contain",
+    marginTop:25,
+    marginLeft: "40%",
+    marginBottom: 8,
+  },
+  
 });

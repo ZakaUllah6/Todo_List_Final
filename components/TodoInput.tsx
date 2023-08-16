@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
 import { useState } from "react";
-import { TextInput, View,Button } from "react-native";
+import { TextInput, View,Button,Image } from "react-native";
 
 const TodoInput  = (props) => {
     const [enteredTodoText, setEnteredTodoText] = useState('');
+    
 
     function enterTodoText(enteredText: string){
         setEnteredTodoText(enteredText);
@@ -15,6 +16,8 @@ const TodoInput  = (props) => {
       }
     return ( 
         <View style={styles.flexForTodo}>
+        
+
         <TextInput style = {styles.textInput} onChangeText={enterTodoText} value= {enteredTodoText} placeholder='Write Your Todos Here '/>
         <Button title='TODO' color={'#FF0079FF'}  onPress={onPress}/>
       </View>
@@ -34,6 +37,7 @@ const styles = StyleSheet.create ({
         paddingBottom: 20,
         marginBottom: 20,
         paddingRight: 10,
+        marginLeft: 20,
        
       },
       textInput: {
@@ -44,5 +48,6 @@ const styles = StyleSheet.create ({
         borderRadius: 200,
         fontSize: 20,
         paddingLeft: 15,
+        
       },
 })
