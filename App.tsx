@@ -29,11 +29,16 @@ export default function App() {
           return item.id;
         }}
       /> */}
-      <ScrollView style={styles.todoList}>
+      {/* <ScrollView style={styles.todoList}>
         {todosList.map((todoItem) => (
           <TodoItem key={todoItem.id} text={todoItem.text} />
         ))}
-      </ScrollView>
+      </ScrollView> */}
+      <View style={styles.todoList}>
+        {todosList.map((todoItem) => (
+          <TodoItem key={todoItem.id} text={todoItem.text} />
+        ))}
+      </View>
     </View>
   );
 }
