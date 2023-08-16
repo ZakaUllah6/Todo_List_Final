@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, ScrollView } from "react-native";
 import TodoItem from "./components/TodoItem";
 import TodoInput from "./components/TodoInput";
 
@@ -19,7 +19,7 @@ export default function App() {
     <View style={styles.container}>
       <TodoInput onTodoAdded={addTodoText} />
 
-      <FlatList
+      {/* <FlatList
         style={styles.todoList}
         data={todosList}
         renderItem={(todoItem) => {
@@ -28,7 +28,12 @@ export default function App() {
         keyExtractor={(item, index) => {
           return item.id;
         }}
-      />
+      /> */}
+      <ScrollView style={styles.todoList}>
+        {todosList.map((todoItem) => (
+          <TodoItem key={todoItem.id} text={todoItem.text} />
+        ))}
+      </ScrollView>
     </View>
   );
 }
